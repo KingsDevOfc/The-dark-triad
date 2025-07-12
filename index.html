@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE DARK TRIAD</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #000;
+        color: white;
+        font-family: 'Bebas Neue', sans-serif;
+      }
+      #audioControl {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 50;
+      }
+    </style>
+  </head>
+  <body class="text-white text-center">
+    <!-- MÚSICA PHONK -->
+    <audio id="phonkAudio" autoplay loop>
+      <source src="phonk.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio embutido.
+    </audio>
+    <button id="audioControl" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">🔊</button>
+
+    <script>
+      const audio = document.getElementById("phonkAudio");
+      const btn = document.getElementById("audioControl");
+      let isPlaying = true;
+
+      btn.onclick = () => {
+        if (isPlaying) {
+          audio.pause();
+          btn.innerText = "🔇";
+        } else {
+          audio.play();
+          btn.innerText = "🔊";
+        }
+        isPlaying = !isPlaying;
+      };
+    </script>
+
+    <!-- TELA ÚNICA: CHAMADA -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 bg-black">
+      <img src="logo.png" alt="THE DARK TRIAD" class="w-64 mb-6">
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight">VOCÊ ESTÁ SENDO CONVOCADO<br><span class="text-red-600">PELO TRIÂNGULO</span></h1>
+      <p class="mt-6 text-xl max-w-2xl text-gray-300">
+        Disciplina, inteligência e frieza definem nossa supremacia.<br>
+        Respeite o Código, faça seu juramento e prepare-se para a guerra.<br>
+        O Triângulo observa.
+      </p>
+
+      <div class="mt-10 flex flex-col md:flex-row gap-4 w-full justify-center">
+        <a href="#formulario" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded text-white font-bold">QUERO ENTRAR NO CLÃ</a>
+        <a href="https://discord.gg/wsbGmYcvs3" target="_blank" class="border border-white px-6 py-3 rounded text-white font-bold">ENTRAR NO DISCORD</a>
+        <a href="https://www.tiktok.com/@the.dark.thriad" target="_blank" class="border border-gray-500 px-6 py-3 rounded text-white font-bold">VER TIKTOK</a>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO DE RECRUTAMENTO -->
+    <section id="formulario" class="py-20 px-6 bg-gray-900">
+      <h2 class="text-3xl font-bold mb-6">Formulário de Recrutamento</h2>
+      <form action="https://formsubmit.co/theanxiety01@gmail.com" method="POST" class="max-w-2xl mx-auto space-y-4 text-left">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="nick" placeholder="Seu nick no Roblox" class="w-full p-3 rounded bg-gray-800 text-white" required>
+        <input type="text" name="idade" placeholder="Sua idade" class="w-full p-3 rounded bg-gray-800 text-white" required>
+        <textarea name="motivo" placeholder="Por que quer entrar para o clã?" class="w-full p-3 rounded bg-gray-800 text-white h-24" required></textarea>
+        <textarea name="disponibilidade" placeholder="Qual sua disponibilidade para jogar?" class="w-full p-3 rounded bg-gray-800 text-white h-24" required></textarea>
+        <button type="submit" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded text-white font-bold w-full">ENVIAR FORMULÁRIO</button>
+      </form>
+    </section>
+
+    <footer class="py-6 bg-black text-center text-gray-500 text-sm">
+      © 2025 THE DARK TRIAD. Todos os direitos reservados.
+    </footer>
+  </body>
+</html>
